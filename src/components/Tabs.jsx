@@ -1,31 +1,25 @@
-import { useState } from "react";
 
-
-function Tabs() {
-  const [toggleState, setToggleState] = useState(1);
-
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
-
+function Tabs(props) {
+    
+  
   return (
     <div className="container">
       <div className="bloc-tabs">
         <button
-          className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(1)}
+          className={props.state === 1 ? "tabs active-tabs" : "tabs"}
+          onClick={() => props.clickHandler(1)}
         >
           All
         </button>
         <button
-          className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(2)}
+          className={props.state === 2 ? "tabs active-tabs" : "tabs"}
+          onClick={() => props.clickHandler(2)}
         >
           Active
         </button>
         <button
-          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(3)}
+          className={props.state === 3 ? "tabs active-tabs" : "tabs"}
+          onClick={() => props.clickHandler(3)}
         >
           Completed
         </button>
@@ -33,7 +27,7 @@ function Tabs() {
 
       <div className="content-tabs">
         <div
-          className={toggleState === 1 ? "content  active-content" : "content"}
+          className={props.state === 1 ? "content  active-content" : "content"}
         >
           <h2>All</h2>
           <hr />
@@ -43,7 +37,7 @@ function Tabs() {
         </div>
 
         <div
-          className={toggleState === 2 ? "content  active-content" : "content"}
+          className={props.state === 2 ? "content  active-content" : "content"}
         >
           <h2>Active</h2>
           <hr />
@@ -53,7 +47,7 @@ function Tabs() {
         </div>
 
         <div
-          className={toggleState === 3 ? "content  active-content" : "content"}
+          className={props.state === 3 ? "content  active-content" : "content"}
         >
           <h2>Completed</h2>
           <hr />
