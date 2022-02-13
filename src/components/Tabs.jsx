@@ -15,19 +15,19 @@ function Tabs() {
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-          Tab 1
+          All
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
-          Tab 2
+          Active
         </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
         >
-          Tab 3
+          Completed
         </button>
       </div>
 
@@ -35,38 +35,30 @@ function Tabs() {
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          <h2>Content 1</h2>
+          <h2>All</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-            vel voluptatum?
+            This is going to be all tab
           </p>
         </div>
 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          <h2>Content 2</h2>
+          <h2>Active</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            voluptatum qui adipisci.
+            This is going to be active items
           </p>
         </div>
 
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
-          <h2>Content 3</h2>
+          <h2>Completed</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-            nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-            Accusamus in quia odit aspernatur provident et ad vel distinctio
-            recusandae totam quidem repudiandae omnis veritatis nostrum
-            laboriosam architecto optio rem, dignissimos voluptatum beatae
-            aperiam voluptatem atque. Beatae rerum dolores sunt.
+            This is going to be completed items plus delete
           </p>
         </div>
       </div>
