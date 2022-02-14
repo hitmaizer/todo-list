@@ -38,6 +38,7 @@ function Tabs(props) {
             className="alltab__input" 
             placeholder="add details"
             name="task" 
+            onChange={(e) => props.handleChange(e)}
             />
             <button className="alltab__btn">
               <span className="btn__text">Add</span> 
