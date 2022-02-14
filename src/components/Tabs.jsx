@@ -34,7 +34,11 @@ function Tabs(props) {
       <div className="content-tabs">
         <div className={props.state === 1 ? "content  active-content" : "content"}>
           <div className="input__container flex-row">
-            <input type="text" className="alltab__input" placeholder="add details" />
+            <input type="text" 
+            className="alltab__input" 
+            placeholder="add details"
+            name="task" 
+            />
             <button className="alltab__btn">
               <span className="btn__text">Add</span> 
             </button>
@@ -57,7 +61,11 @@ function Tabs(props) {
 
         <div className={props.state === 2 ? "content  active-content" : "content"}>
           <div className="input__container flex-row">
-            <input type="text" className="alltab__input" placeholder="add details" />
+            <input type="text" 
+            className="alltab__input" 
+            placeholder="add details"
+            name="task" 
+            />
             <button className="alltab__btn">
               <span className="btn__text">Add</span> 
             </button>
@@ -81,11 +89,14 @@ function Tabs(props) {
         <div className={props.state === 3 ? "content  active-content" : "content"}>
         <div className="alltab__content flex-col">
             <div className="content__item flex-row">
-              <input type="checkbox" selected className="item__checkbox" />
-              <p className="item__description item__description--completed">Do coding challenges</p>
+              <input type="checkbox" defaultChecked={true} className="item__checkbox" />
+              <p className="item__description item__description--completed"><del>Do coding challenges</del></p>
               <DeleteBin7 size="24px" className="item__icon" />
-
             </div>
+            <button className="delete__btn">
+              <span className="btn__text">delete all</span>
+            </button>
+
           </div>
         </div>
       </div>
