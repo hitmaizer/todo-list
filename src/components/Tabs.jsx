@@ -5,43 +5,24 @@ import ListItem from '../components/ListItem'
 import { nanoid } from 'nanoid'
 
 function Tabs(props) {
-  const [activeTasks, setActiveTasks] = React.useState([])
-  const [completedTasks, setCompletedTasks] = React.useState([])
-
-  React.useEffect(() => {
-    const activeList = props.notes.filter((value) => {
-      if (value.isCompleted === false) {
-        return value
-      }
-    })
-    
-    const completedList = props.notes.filter((value) => {
-      if (value.isCompleted === true) {
-        return value
-      }
-    })
-
-    setActiveTasks(activeList)
-    setCompletedTasks(completedList)    
-    
-  }, [props.notes])
-
-  console.log(completedTasks)
 
   const allItems = props.notes.map(note => <ListItem 
     key={nanoid()}
     task={note.task}
-    completed={note.isCompleted} />)
+    completed={note.isCompleted}
+    checkItem={props.checkItem} />)
   
-  const activeItems = activeTasks.map(item => <ListItem 
+  const activeItems = props.activeTasks.map(item => <ListItem 
     key={nanoid()}
     task={item.task}
-    completed={item.isCompleted} />)
+    completed={item.isCompleted}
+    checkItem={props.checkItem} />)
   
-  const completedItems = completedTasks.map(item => <ListItem 
+  const completedItems = props.completedTasks.map(item => <ListItem 
     key={nanoid()}
     task={item.task}
-    completed={item.isCompleted} />)
+    completed={item.isCompleted}
+    checkItem={props.checkItem} />)
 
   
   return (
