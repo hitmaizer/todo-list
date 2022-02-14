@@ -31,10 +31,28 @@ function Tabs(props) {
       <div className="content-tabs">
         <div
           className={props.state === 1 ? "content  active-content" : "content"}>
-          
-          <p>
-            This is going to be all tab
-          </p>
+          <div className="input__container flex-row">
+            <input type="text" className="alltab__input" placeholder="add details" />
+            <button className="alltab__btn">
+              <span className="btn__text">Add</span> 
+            </button>
+          </div>
+          <div className="alltab__content flex-col">
+            
+            <div className="content__item flex-row">
+              <input type="checkbox" className="item__checkbox" />
+              <p className="item__description">Do coding challenges</p>
+            </div>
+            <div className="content__item flex-row">
+              <input type="checkbox" className="item__checkbox" />
+              <p className="item__description">Do coding challenges</p>
+            </div>
+            <div className="content__item flex-row">
+              <input type="checkbox" className="item__checkbox" />
+              <p className="item__description">Do coding challenges</p>
+            </div>
+
+          </div>
         </div>
 
         <div
