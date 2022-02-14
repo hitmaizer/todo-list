@@ -132,6 +132,13 @@ button {
     cursor: pointer;
 }
 
+.delete__btn {
+    background-color: $danger;
+    padding: 20px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 .alltab__content {
     margin-top: 32px;
     gap: 32px;
