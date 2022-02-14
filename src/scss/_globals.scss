@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.page__wrapper {
+    padding: 32px;
+}
+
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -23,5 +27,5 @@
     letter-spacing: -0.045em;
     color: $darkGray;
     text-align: center;
-    margin-top: 32px;
+    
 }
