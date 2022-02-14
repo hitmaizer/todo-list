@@ -1,4 +1,5 @@
 import { DeleteBin7 } from '@styled-icons/remix-line/DeleteBin7'
+import ListItem from '../components/ListItem'
 
 function Tabs(props) {
     
@@ -45,18 +46,9 @@ function Tabs(props) {
             </button>
           </div>
           <div className="alltab__content flex-col">            
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
+            <ListItem />
+            <ListItem />
+            <ListItem />
           </div>
         </div>
 
@@ -72,18 +64,9 @@ function Tabs(props) {
             </button>
           </div>
           <div className="alltab__content flex-col">
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
-            <div className="content__item flex-row">
-              <input type="checkbox" className="item__checkbox" />
-              <p className="item__description">Do coding challenges</p>
-            </div>
+            <ListItem />
+            <ListItem />
+            <ListItem />
           </div>
         </div>
 
