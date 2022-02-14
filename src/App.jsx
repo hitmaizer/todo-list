@@ -2,21 +2,49 @@ import React from 'react';
 import Tabs from './components/Tabs';
 import './scss/style.css';
 import { nanoid } from 'nanoid'
+import { ColorSwatch } from 'styled-icons/heroicons-solid';
 
 
 export default function App() {
     const [toggleState, setToggleState] = React.useState(1);
     const [notes, setNotes] = React.useState([])
+    const [activeTasks, setActiveTasks] = React.useState([])
+    const [completedTasks, setCompletedTasks] = React.useState([])
     const [currentNote, setCurrentNote] = React.useState({
         task: "",
         isCompleted: false
     })
+
+    React.useEffect(() => {
+        const activeList = notes.filter((value) => {
+          if (value.isCompleted === false) {
+            return value
+          }
+        })
+        
+        const completedList = notes.filter((value) => {
+          if (value.isCompleted === true) {
+            return value
+          }
+        })
+    
+        setActiveTasks(activeList)
+        setCompletedTasks(completedList)    
+        
+      }, [notes])
     
     function handleChange(e) {
-        const typingTask = e.target.value
-        setCurrentNote({...currentNote, [e.target.name]: typingTask, id: nanoid()})
+        const { name, value } = e.target
+        setCurrentNote({...currentNote, [name]: value, id: nanoid()})
 
     }
+
+    function checkItem(e) {
+        
+
+    }
+
+    console.log(notes)
 
     function submitNote() {
         notes.push(currentNote)
@@ -39,6 +67,9 @@ export default function App() {
             handleChange={handleChange}
             submitNote={submitNote}
             notes={notes}
+            checkItem={checkItem}
+            activeTasks={activeTasks}
+            completedTasks={completedTasks}
             />
         </div>
     )
