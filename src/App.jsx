@@ -2,7 +2,7 @@ import React from 'react';
 import Tabs from './components/Tabs';
 import './scss/style.css';
 import { nanoid } from 'nanoid'
-import { ColorSwatch } from 'styled-icons/heroicons-solid';
+
 
 
 export default function App() {
