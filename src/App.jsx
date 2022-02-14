@@ -1,8 +1,8 @@
-import { NanoDimensions } from '@styled-icons/crypto/Nano';
 import React from 'react';
 import Tabs from './components/Tabs';
 import './scss/style.css';
 import { nanoid } from 'nanoid'
+import { North } from 'styled-icons/material';
 
 export default function App() {
     const [toggleState, setToggleState] = React.useState(1);
@@ -13,7 +13,12 @@ export default function App() {
         isCompleted: false
     })
     
-    
+    function handleChange(e) {
+        const typingTask = e.target.value
+        setCurrentNote({...currentNote, task: typingTask})
+    }
+
+    console.log(currentNote)
 
     function toggleTab(index) {
         setToggleState(index);
@@ -26,6 +31,7 @@ export default function App() {
             <Tabs 
             clickHandler={toggleTab}
             state={toggleState}
+            handleChange={handleChange}
             />
         </div>
     )
