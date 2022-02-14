@@ -19,12 +19,11 @@ export default function App() {
     }
 
     function submitNote() {
-            notes.push(currentNote)
+        notes.push(currentNote)
         
     }
 
-    console.log(currentNote)
-    console.log(notes)
+    
 
     function toggleTab(index) {
         setToggleState(index);
