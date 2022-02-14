@@ -11,7 +11,7 @@ body {
     background: #f1f1f1;
     margin: 100px auto 0;
     word-break: break-all;
-    border: 1px solid rgba(0, 0, 0, 0.274);
+    // border: 1px solid rgba(0, 0, 0, 0.274);
 }
   
 .bloc-tabs {
@@ -87,4 +87,12 @@ button {
   
 .active-content {
     display: block;
+}
+
+.tab__title {
+    font-family: $montserrat;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkGray;
 }
