@@ -155,3 +155,16 @@ button {
     line-height: 22px;
     color: $black;
 }
+
+.item__description--completed {
+    flex: 1;
+}
+
+.item__icon {
+    color: $lightGray;
+    cursor: pointer;
+    transition: all .5s ease;
+    &:hover {
+        color: $danger;
+    }
+}

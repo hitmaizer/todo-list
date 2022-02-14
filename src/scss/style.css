@@ -233,3 +233,20 @@ button {
   line-height: 22px;
   color: #000000;
 }
+
+.item__description--completed {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.item__icon {
+  color: #BDBDBD;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.item__icon:hover {
+  color: #EB5757;
+}
