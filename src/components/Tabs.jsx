@@ -109,7 +109,7 @@ function Tabs(props) {
         <div className={props.state === 3 ? "content  active-content" : "content"}>
         <div className="alltab__content flex-col">
             {
-              completedItems.length != 0 && <div className="content__item flex-row">
+              completedItems.length !== 0 && <div className="content__item flex-row">
               <input type="checkbox" defaultChecked={true} className="item__checkbox" />
               {completedItems}
               <DeleteBin7 size="24px" className="item__icon" />
