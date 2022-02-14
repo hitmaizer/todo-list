@@ -14,3 +14,14 @@
     flex-direction: row;
 }
 
+.page__title {
+    font-family: $raleway;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.045em;
+    color: $darkGray;
+    text-align: center;
+    margin-top: 32px;
+}
