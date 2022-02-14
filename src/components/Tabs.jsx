@@ -1,8 +1,48 @@
+/* eslint-disable array-callback-return */
+import React from 'react'
 import { DeleteBin7 } from '@styled-icons/remix-line/DeleteBin7'
 import ListItem from '../components/ListItem'
+import { nanoid } from 'nanoid'
 
 function Tabs(props) {
+  const [activeTasks, setActiveTasks] = React.useState([])
+  const [completedTasks, setCompletedTasks] = React.useState([])
+
+  React.useEffect(() => {
+    const activeList = props.notes.filter((value) => {
+      if (value.isCompleted === false) {
+        return value
+      }
+    })
     
+    const completedList = props.notes.filter((value) => {
+      if (value.isCompleted === true) {
+        return value
+      }
+    })
+
+    setActiveTasks(activeList)
+    setCompletedTasks(completedList)    
+    
+  }, [props.notes])
+
+  console.log(completedTasks)
+
+  const allItems = props.notes.map(note => <ListItem 
+    key={nanoid()}
+    task={note.task}
+    completed={note.isCompleted} />)
+  
+  const activeItems = activeTasks.map(item => <ListItem 
+    key={nanoid()}
+    task={item.task}
+    completed={item.isCompleted} />)
+  
+  const completedItems = completedTasks.map(item => <ListItem 
+    key={nanoid()}
+    task={item.task}
+    completed={item.isCompleted} />)
+
   
   return (
     <div className="container">
@@ -41,14 +81,12 @@ function Tabs(props) {
             name="task" 
             onChange={(e) => props.handleChange(e)}
             />
-            <button className="alltab__btn">
+            <button className="alltab__btn" onClick={props.submitNote}>
               <span className="btn__text">Add</span> 
             </button>
           </div>
           <div className="alltab__content flex-col">            
-            <ListItem />
-            <ListItem />
-            <ListItem />
+            {allItems}
           </div>
         </div>
 
@@ -59,24 +97,25 @@ function Tabs(props) {
             placeholder="add details"
             name="task" 
             />
-            <button className="alltab__btn">
+            <button className="alltab__btn" onClick={props.submitNote}>
               <span className="btn__text">Add</span> 
             </button>
           </div>
           <div className="alltab__content flex-col">
-            <ListItem />
-            <ListItem />
-            <ListItem />
+            {activeItems}
           </div>
         </div>
 
         <div className={props.state === 3 ? "content  active-content" : "content"}>
         <div className="alltab__content flex-col">
-            <div className="content__item flex-row">
+            {
+              completedItems.length != 0 && <div className="content__item flex-row">
               <input type="checkbox" defaultChecked={true} className="item__checkbox" />
-              <p className="item__description item__description--completed"><del>Do coding challenges</del></p>
+              {completedItems}
               <DeleteBin7 size="24px" className="item__icon" />
-            </div>
+              </div>
+            }
+            
             <button className="delete__btn">
               <span className="btn__text">delete all</span>
             </button>
