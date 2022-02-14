@@ -18,7 +18,13 @@ export default function App() {
 
     }
 
+    function submitNote() {
+            notes.push(currentNote)
+        
+    }
+
     console.log(currentNote)
+    console.log(notes)
 
     function toggleTab(index) {
         setToggleState(index);
@@ -32,6 +38,8 @@ export default function App() {
             clickHandler={toggleTab}
             state={toggleState}
             handleChange={handleChange}
+            submitNote={submitNote}
+            notes={notes}
             />
         </div>
     )
