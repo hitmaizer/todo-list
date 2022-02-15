@@ -10,19 +10,25 @@ function Tabs(props) {
     key={nanoid()}
     task={note.task}
     completed={note.isCompleted}
-    checkItem={props.checkItem} />)
+    checkItem={props.checkItem}
+    id={note.id}
+    handleClick={() => props.checkItem(note.id)} />)
   
   const activeItems = props.activeTasks.map(item => <ListItem 
     key={nanoid()}
     task={item.task}
     completed={item.isCompleted}
-    checkItem={props.checkItem} />)
+    checkItem={props.checkItem}
+    id={item.id}
+    handleClick={() => props.checkItem(item.id)} />)
   
   const completedItems = props.completedTasks.map(item => <ListItem 
     key={nanoid()}
     task={item.task}
     completed={item.isCompleted}
-    checkItem={props.checkItem} />)
+    checkItem={props.checkItem}
+    id={item.id}
+    handleClick={() => props.checkItem(item.id)} />)
 
   
   return (
@@ -91,7 +97,6 @@ function Tabs(props) {
         <div className="alltab__content flex-col">
             {
               completedItems.length !== 0 && <div className="content__item flex-row">
-              <input type="checkbox" defaultChecked={true} className="item__checkbox" />
               {completedItems}
               <DeleteBin7 size="24px" className="item__icon" />
               </div>
