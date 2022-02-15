@@ -34,7 +34,8 @@ function Tabs(props) {
       <DeleteBin7 
       key={nanoid()} 
       size="24px" 
-      className="item__icon" />
+      className="item__icon"
+      onClick={(e) => props.deleteSelectedNote(e, item.id)} />
     </div> )
     
 
@@ -110,7 +111,7 @@ function Tabs(props) {
                 </div>
             }
             
-            <button className="delete__btn">
+            <button className="delete__btn" onClick={props.deleteAllNotes}>
               <span className="btn__text">delete all</span>
             </button>
 
