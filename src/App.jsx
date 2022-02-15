@@ -39,16 +39,16 @@ export default function App() {
 
     }
 
-    function checkItem() {
-        console.log(currentNote.id)
-        setNotes(notes.map(item => {
-          if(item.id === currentNote.id) {
-            return {...item, isCompleted: !item.isCompleted}
-          } else {
-            return item
-          }
-        }))
-
+    function checkItem(id) {
+      console.log(id)
+      setNotes(notes.map(note => {
+        if(id === note.id) {
+          return {...note, isCompleted: !note.isCompleted}
+        } else {
+          return note
+        }
+      }))
+  
     }
 
     console.log(notes)
