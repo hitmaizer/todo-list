@@ -22,13 +22,21 @@ function Tabs(props) {
     id={item.id}
     handleClick={() => props.checkItem(item.id)} />)
   
-  const completedItems = props.completedTasks.map(item => <ListItem 
-    key={nanoid()}
-    task={item.task}
-    completed={item.isCompleted}
-    checkItem={props.checkItem}
-    id={item.id}
-    handleClick={() => props.checkItem(item.id)} />)
+  const completedItems = props.completedTasks.map(item => 
+    <div className="content__item flex-row">
+      <ListItem 
+      key={nanoid()}
+      task={item.task}
+      completed={item.isCompleted}
+      checkItem={props.checkItem}
+      id={item.id}
+      handleClick={() => props.checkItem(item.id)} />
+      <DeleteBin7 
+      key={nanoid()} 
+      size="24px" 
+      className="item__icon" />
+    </div> )
+    
 
   
   return (
@@ -96,10 +104,10 @@ function Tabs(props) {
         <div className={props.state === 3 ? "content  active-content" : "content"}>
         <div className="alltab__content flex-col">
             {
-              completedItems.length !== 0 && <div className="content__item flex-row">
-              {completedItems}
-              <DeleteBin7 size="24px" className="item__icon" />
-              </div>
+              completedItems.length !== 0 && 
+                <div className="alltab__content flex-col">
+                  {completedItems}
+                </div>
             }
             
             <button className="delete__btn">
