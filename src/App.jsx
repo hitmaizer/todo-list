@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid'
 
 export default function App() {
     const [toggleState, setToggleState] = React.useState(1);
-    const [notes, setNotes] = React.useState([])
+    const [notes, setNotes] = React.useState(JSON.parse(localStorage.getItem("notes")) || [])
     const [activeTasks, setActiveTasks] = React.useState([])
     const [completedTasks, setCompletedTasks] = React.useState([])
     const [currentNote, setCurrentNote] = React.useState({
@@ -29,7 +29,10 @@ export default function App() {
         })
     
         setActiveTasks(activeList)
-        setCompletedTasks(completedList)    
+        setCompletedTasks(completedList)
+        
+        localStorage.setItem("notes", JSON.stringify(notes))
+
         
       }, [notes])
     
@@ -40,7 +43,6 @@ export default function App() {
     }
 
     function checkItem(id) {
-      console.log(id)
       setNotes(notes.map(note => {
         if(id === note.id) {
           return {...note, isCompleted: !note.isCompleted}
@@ -50,8 +52,8 @@ export default function App() {
       }))
   
     }
-
-    console.log(notes)
+    
+    
 
     function submitNote() {
         notes.push(currentNote)
