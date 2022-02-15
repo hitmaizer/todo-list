@@ -23,7 +23,7 @@ function Tabs(props) {
     handleClick={() => props.checkItem(item.id)} />)
   
   const completedItems = props.completedTasks.map(item => 
-    <div className="content__item flex-row">
+    <div key={nanoid()} className="content__item flex-row">
       <ListItem 
       key={nanoid()}
       task={item.task}
