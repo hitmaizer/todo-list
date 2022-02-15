@@ -52,8 +52,14 @@ export default function App() {
       }))
   
     }
+
+    function deleteSelectedNote(event, noteId) {
+      setNotes(notes => notes.filter(note => note.id !== noteId))
+    }
     
-    
+    function deleteAllNotes() {
+      setNotes([])
+    }
 
     function submitNote() {
         notes.push(currentNote)
@@ -79,6 +85,8 @@ export default function App() {
             checkItem={checkItem}
             activeTasks={activeTasks}
             completedTasks={completedTasks}
+            deleteAllNotes={deleteAllNotes}
+            deleteSelectedNote={deleteSelectedNote}
             />
         </div>
     )
