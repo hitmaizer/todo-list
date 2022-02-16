@@ -63,7 +63,7 @@ export default function App() {
 
     function submitNote() {
         setNotes(prevNotes => [currentNote, ...prevNotes])
-        //notes.push(currentNote)
+        
         
     }
 
